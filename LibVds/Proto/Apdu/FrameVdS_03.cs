@@ -3,10 +3,10 @@ using LibVds.Utils;
 namespace LibVds.Proto.Apdu
 {
     /// <summary>
-    /// Quittungsrücksendung
+    /// QuittungsrÃ¼cksendung
     /// </summary>
     /// <remarks>
-    /// Mit diesem Satztyp werden Zustandsänderungen und Steuerbefehle quittiert, wenn eine entsprechende Quittung angeforder worden ist (Typ 0x02).
+    /// Mit diesem Satztyp werden ZustandsÃ¤nderungen und Steuerbefehle quittiert, wenn eine entsprechende Quittung angeforder worden ist (Typ 0x02).
     /// Der Satz unterscheidet sich nur im Satztyp vom Meldungs- oder Steuersatz.
     /// </remarks>
     public class FrameVdS_03 : FrameVdS
@@ -16,6 +16,11 @@ namespace LibVds.Proto.Apdu
         {
         }
 
+        public byte Device
+        {
+            get { return this.buffer[2]; }
+        }
+        
         public byte Address
         {
             get { return this.buffer[3]; }
